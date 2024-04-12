@@ -1,0 +1,58 @@
+<resources>
+  <!-- All Styles By Aquiles Trindade -->
+  
+    <style name="AppTheme" parent="Theme.Material3.Dark">
+    <!-- Colors -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorControlNormal">@color/color_control_normal</item>
+        <item name="colorControlHighlight">@color/color_control_highlight</item>
+        <item name="fabBackgroundTint">@color/fab_background_tint</item>
+        <item name="fabIconTint">@color/fab_icon_tint</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorBackground">@color/color_background</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
+        <item name="colorContainer">@color/color_container</item>
+        <item name="colorGreen">@color/color_green</item>
+        <item name="colorError">@color/color_error</item>
+        
+        
+    <!-- Phone Bars -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor" >@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+   <!-- ActionBar -->     
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        
+   <!-- Others -->
+        <item name="android:fontFamily">@font/app_font</item>
+        <item name="android:windowActivityTransitions">true</item>
+        
+    </style>
+    <!--- BottomSheet Theme -->
+<style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    
+     <!--- CardView Style -->
+</style>
+    <style name="Gam.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+   <!--     <item name="app:cardBackgroundColor">@android:color/system_neutral2_800</item> -->
+    </style>
+    
+    <!-- Collapsing Toolbar Large Style -->
+    <style name="Gam.Title" parent="@style/Widget.Material3.CollapsingToolbar.Large">
+        <item name="fontFamily">@font/app_font</item>
+    </style>
+    <!-- Button Style -->
+    <style name="Gam.Button" parent="@style/Widget.Material3.Button">
+        <item name="fontFamily">@font/app_font</item>
+    </style>
+    
+</resources>
