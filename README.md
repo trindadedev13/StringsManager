@@ -1,9 +1,8 @@
 # Strings-Creator 
 <div align="center"> 
     <p>Quick, Easy and practical! </p>
-        <a href="https://github.com/aquilesTrindade/Strings-Creator/releases">
-        <img src="https://img.shields.io/github/downloads/aquiles
-            Trindade/Strings-Creator/total.svg?color=cfbdff&style=for-the-badge&labelColor=23232F" alt="Download Counts">
+        <a href="https://github.com/aquilesTrindade/StringsCreator/releases">
+        <img src="https://img.shields.io/github/downloads/aquilesTrindade/StringsCreator/total.svg?color=cfbdff&style=for-the-badge&labelColor=23232F" alt="Download Counts">
                 <a href="https://github.com/aquilesTrindade/StringsCreator/stargazers">
         <img src="https://img.shields.io/github/stars/aquilesTrindade/StringsCreator.svg?color=cfbdff&style=for-the-badge&logo=apachespark&logoColor=ebebf0&labelColor=23232F" alt="Stars Count">
 </div>
