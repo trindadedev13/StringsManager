@@ -24,4 +24,5 @@
     <string name="edit">Edit</string>
     <string name="settings_resources_tag_title">Resources TAG</string>
     <string name="settings_resources_tag_description">Use Resources TAG in xml file</string>
+    <string name="github_contributors">Github Contributors</string>
 </resources>
