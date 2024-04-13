@@ -11,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -21,14 +24,19 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.transition.MaterialSharedAxis;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.trindade.stringscreator.StringsCreatorApp;
+
 import com.trindade.stringscreator.R;
+import com.trindade.stringscreator.StringsCreatorApp;
 import com.trindade.stringscreator.StringsCreatorAppLog;
 import com.trindade.stringscreator.adapters.StringsAdapter;
+import com.trindade.stringscreator.classes.GlobalConfig;
+import com.trindade.stringscreator.classes.SimpleHighlighter;
 import com.trindade.stringscreator.classes.copyToClipboard;
 import com.trindade.stringscreator.databinding.ActivityMainBinding;
 import com.trindade.stringscreator.databinding.MainFragmentBinding;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class MainFragment extends Fragment {
@@ -42,14 +50,18 @@ public class MainFragment extends Fragment {
     private static final int CREATE_FILE = 1;
     ArrayList<HashMap<String, Object>> listmap = new ArrayList<>();
     SharedPreferences sp;
-    Context ctx, context;
+    Context ctx;
     StringsCreatorAppLog logger = new StringsCreatorAppLog();
 
     @Override
     public void onCreate(Bundle bund) {
         super.onCreate(bund);
-        setEnterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, true));
-        setExitTransition(new MaterialSharedAxis(MaterialSharedAxis.X, false));
+        setEnterTransition(
+                new MaterialSharedAxis(
+                        GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
+        setExitTransition(
+                new MaterialSharedAxis(
+                        GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
     }
 
     @Override
@@ -57,12 +69,10 @@ public class MainFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = MainFragmentBinding.inflate(inflater);
         ctx = getActivity();
-        try{
-            sp = context.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
-        } catch(Exception e){
-            
+        // Verifica se o contexto é nulo antes de usá-lo
+        if (ctx != null) {
+            sp = ctx.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
         }
-        
 
         initializeViews();
         clicks();
@@ -71,44 +81,18 @@ public class MainFragment extends Fragment {
     }
 
     private void initializeViews() {
-        sp = ctx.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        if (!sp.contains("JSON")) {
-            sp.edit().putString("JSON", "[]").apply();
-            sp.edit().putBoolean("ADD_RES", true).apply();
-        } else {
-            getData(binding.listStrings);
+        if (ctx != null) {
+            sp = ctx.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+            if (!sp.contains("JSON")) {
+                sp.edit().putString("JSON", "[]").apply();
+                sp.edit().putBoolean("ADD_RES", true).apply();
+            } else {
+                getData(binding.listStrings);
+            }
         }
     }
 
     private void clicks() {
-        binding.fab.setOnClickListener(
-                v -> {
-                    if (binding.listStrings != null) {
-                        MaterialAlertDialogBuilder dialog =
-                                new MaterialAlertDialogBuilder(getActivity());
-                        View alertD = getLayoutInflater().inflate(R.layout.edittext, null);
-                        dialog.setView(alertD);
-
-                        final TextInputEditText stringName = alertD.findViewById(R.id.stringName);
-                        final TextInputEditText stringValue = alertD.findViewById(R.id.stringValue);
-
-                        stringName.setFocusableInTouchMode(true);
-                        stringValue.setFocusableInTouchMode(true);
-
-                        dialog.setTitle(getResources().getString(R.string.main_fab_text));
-                        dialog.setPositiveButton(
-                                getResources().getString(R.string.create),
-                                (d, w) -> {
-                                    newString(
-                                            stringName.getText().toString(),
-                                            stringValue.getText().toString());
-                                });
-                        dialog.setNegativeButton(getResources().getString(R.string.cancel), null);
-                        dialog.show();
-                    } else {
-                        logger.add("null list");
-                    }
-                });
 
         binding.toolbar.setOnMenuItemClickListener(
                 item -> {
@@ -120,6 +104,37 @@ public class MainFragment extends Fragment {
                         intent.setType("xml/plain");
                         intent.putExtra(Intent.EXTRA_TITLE, "strings.xml");
                         startActivityForResult(intent, CREATE_FILE);
+                    } else if (item.getItemId() == R.id.add_new_string) {
+                        if (binding.listStrings != null) {
+                            MaterialAlertDialogBuilder dialog =
+                                    new MaterialAlertDialogBuilder(getActivity());
+                            View alertD =
+                                    getLayoutInflater()
+                                            .inflate(R.layout.content_dialog_create_edit, null);
+                            dialog.setView(alertD);
+
+                            final TextInputEditText stringName =
+                                    alertD.findViewById(R.id.stringName);
+                            final TextInputEditText stringValue =
+                                    alertD.findViewById(R.id.stringValue);
+
+                            stringName.setFocusableInTouchMode(true);
+                            stringValue.setFocusableInTouchMode(true);
+
+                            dialog.setTitle(getResources().getString(R.string.main_fab_text));
+                            dialog.setPositiveButton(
+                                    getResources().getString(R.string.create),
+                                    (d, w) -> {
+                                        newString(
+                                                stringName.getText().toString(),
+                                                stringValue.getText().toString());
+                                    });
+                            dialog.setNegativeButton(
+                                    getResources().getString(R.string.cancel), null);
+                            dialog.show();
+                        } else {
+                            logger.add("null list");
+                        }
                     }
                     return false;
                 });
@@ -130,7 +145,7 @@ public class MainFragment extends Fragment {
     }
 
     private void newString(String name, String value) {
-        map = new HashMap();
+        map = new HashMap<>();
         map.put("val", "<string name=\"" + name + "\">" + value + "</string>");
         map.put("name", name);
         map.put("value", value);
@@ -141,6 +156,7 @@ public class MainFragment extends Fragment {
 
     private String forEach() {
         StringBuilder result = new StringBuilder();
+        Collections.reverse(listmap);
         p = listmap.size() - 1;
         for (int r8 = 0; r8 < (int) (listmap.size()); r8++) {
             result.append("\n   ").append(listmap.get((int) p).get("val").toString());
@@ -150,7 +166,11 @@ public class MainFragment extends Fragment {
     }
 
     private String generateCodeFull() {
-        return "<resources>" + forEach() + "\n</resources>";
+        if(sp.getBoolean("ADD_RES", false)){
+            return "<resources>" + forEach() + "\n</resources>";
+        } else {
+            return forEach();
+        }
     }
 
     private void copyText(String text) {
@@ -162,44 +182,36 @@ public class MainFragment extends Fragment {
     private void dialogCode() {
         MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(getActivity());
         dialog.setTitle(getResources().getString(R.string.view_code));
-
+        //dialog.setMessage(generateCodeFull());
+        
         LinearLayout layout = new LinearLayout(getActivity());
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(match, wrap);
         layout.setPadding(12, 12, 12, 12);
         layout.setLayoutParams(layoutParams);
-
-        TextInputEditText txt = new TextInputEditText(getActivity());
+        
+        
+        TextView txt = new TextView(getActivity());
         LinearLayout.LayoutParams txtParams = new LinearLayout.LayoutParams(wrap, wrap);
         txtParams.setMargins(18, 20, 20, 20);
         txt.setLayoutParams(txtParams);
-        txt.setTextSize((int) 10);
-
+        txt.setTextSize((int)10);
+        
         layout.addView(txt);
-
+        
         txt.setText(generateCodeFull());
+        new SimpleHighlighter(txt, "xml");
         dialog.setView(layout);
-        dialog.setPositiveButton(
-                getResources().getString(R.string.copy),
-                (d, w) -> {
-                    copyText(generateCodeFull());
-                });
-        dialog.setNegativeButton(getResources().getString(R.string.cancel), (d, w) -> {});
-
+        dialog.setPositiveButton(getResources().getString(R.string.copy), (d, w) ->{
+            copyText(generateCodeFull());
+        });
+        dialog.setNegativeButton(getResources().getString(R.string.cancel), (d, w) ->{
+            
+        });
         dialog.show();
     }
 
-    private void newString(String name, String value, ListView listV) {
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("val", "<string name=\"" + name + "\">" + value + "</string>");
-        map.put("name", name);
-        map.put("value", value);
-        listmap.add(map);
-        updateList(listV);
-        putData();
-    }
-
     private void updateList(ListView ctc) {
-        StringsCreatorApp.updateListView(context, listmap, binding.listStrings);
+        StringsCreatorApp.updateListView(ctx, listmap, ctc);
         Log.d("Utils", "Lista atualizada com sucesso.");
     }
 
@@ -209,12 +221,15 @@ public class MainFragment extends Fragment {
     }
 
     private void getData(ListView listV) {
-        boolean ADD_RES = sp.getBoolean("ADD_RES", false);
-        listmap =
-                new Gson()
-                        .fromJson(
-                                sp.getString("JSON", ""),
-                                new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
-        updateList(binding.listStrings);
+        if (ctx != null) {
+            boolean ADD_RES = sp.getBoolean("ADD_RES", false);
+            listmap =
+                    new Gson()
+                            .fromJson(
+                                    sp.getString("JSON", ""),
+                                    new TypeToken<
+                                            ArrayList<HashMap<String, Object>>>() {}.getType());
+            updateList(binding.listStrings);
+        }
     }
 }

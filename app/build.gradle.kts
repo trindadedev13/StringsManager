@@ -12,8 +12,8 @@ android {
         applicationId = "com.trindade.stringscreator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "@string/app_versionName"
         
         vectorDrawables { 
             useSupportLibrary = true

@@ -7,10 +7,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
-import com.google.android.material.materialswitch.MaterialSwitch;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.transition.MaterialSharedAxis;
+
 import com.trindade.stringscreator.R;
+import com.trindade.stringscreator.classes.GlobalConfig;
 import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
 
 public class SettingsFragment extends Fragment {
@@ -22,31 +26,27 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle bund) {
         super.onCreate(bund);
-        setEnterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, true));
-        setExitTransition(new MaterialSharedAxis(MaterialSharedAxis.X, false));
+        setEnterTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
+        setExitTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = SettingsFragmentBinding.inflate(inflater, container, false);
         ctx = requireContext();
-        binding = SettingsFragmentBinding.inflate(inflater);
-        sp = ctx.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
-        getData();
-        
+        if (ctx != null) {
+            sp = ctx.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
+            getData();
+        }
+
         binding.resourcesTag.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             sp.edit().putBoolean("ADD_RES", isChecked).apply();
         });
-        
+
         return binding.getRoot();
     }
-    
-    private void getData(){
-        binding.resourcesTag.setChecked(sp.getBoolean("ADD_RES",false));
-    }
-    
-    private void putData(){
-        
+
+    private void getData() {
+        binding.resourcesTag.setChecked(sp.getBoolean("ADD_RES", false));
     }
 }

@@ -69,7 +69,7 @@ public class StringsAdapter extends BaseAdapter {
         ViewHolder viewHolder;
 
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.string, parent, false);
+            convertView = mInflater.inflate(R.layout.content_string, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.textViewValue = convertView.findViewById(R.id.val);
             viewHolder.card = convertView.findViewById(R.id.card);
@@ -99,7 +99,7 @@ public class StringsAdapter extends BaseAdapter {
     }
     private void dialog_actions(int position) {
     	         actions_dialog = new MaterialAlertDialogBuilder(mContext);
-                 View weiv = ((Activity)mContext).getLayoutInflater().inflate(R.layout.bottom_sheet_actions, null);
+                 View weiv = ((Activity)mContext).getLayoutInflater().inflate(R.layout.content_bottom_sheet_actions, null);
                  actions_dialog.setView(weiv);
                  actions_dialog.setCancelable(true);
                  actions_dialogAlert = actions_dialog.create();
@@ -109,7 +109,7 @@ public class StringsAdapter extends BaseAdapter {
                  edit.setOnClickListener(vv ->{
                      actions_dialogAlert.dismiss();
                      MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(mContext);
-                     View alertD = ((Activity)mContext).getLayoutInflater().inflate(R.layout.edittext, null);
+                     View alertD = ((Activity)mContext).getLayoutInflater().inflate(R.layout.content_dialog_create_edit, null);
                      dialog.setView(alertD);
 
                      final TextInputEditText stringName =  alertD.findViewById(R.id.stringName);
@@ -153,7 +153,7 @@ public class StringsAdapter extends BaseAdapter {
     	final BottomSheetDialog actions_bottom = new BottomSheetDialog(mContext);
                 final BottomSheetBehavior actions_bottomB;
                 View weiv;
-                weiv = ((Activity)mContext).getLayoutInflater().inflate(R.layout.bottom_sheet_actions, null);
+                weiv = ((Activity)mContext).getLayoutInflater().inflate(R.layout.content_bottom_sheet_actions, null);
                 actions_bottom.setContentView(weiv);
                 actions_bottom.setCancelable(true);
                 Button edit = weiv.findViewById(R.id.edit);
@@ -161,7 +161,7 @@ public class StringsAdapter extends BaseAdapter {
                 edit.setOnClickListener(vv ->{
                 actions_bottom.dismiss();
                      MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(mContext);
-                     View alertD = ((Activity)mContext).getLayoutInflater().inflate(R.layout.edittext, null);
+                     View alertD = ((Activity)mContext).getLayoutInflater().inflate(R.layout.content_dialog_create_edit, null);
                      dialog.setView(alertD);
                      
 
