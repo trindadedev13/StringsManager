@@ -1,7 +1,7 @@
 # Strings-Creator 
 <div align="center"> 
     <p>Quick, Easy and practical! </p>
-        <a href="https://github.com/Ruan625Br/FileManagerSphere/releases">
+        <a href="https://github.com/aquilesTrindade/Strings-Creator/releases">
         <img src="https://img.shields.io/github/downloads/aquilesTrindade/Strings-Creator/total.svg?color=cfbdff&style=for-the-badge&labelColor=23232F" alt="Download Counts">
 </div>
 
