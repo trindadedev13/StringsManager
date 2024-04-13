@@ -18,6 +18,7 @@
     <string name="add">Adicionar</string>
     <string name="string_val">Valor da string</string>
     <string name="string_name">Nome da string</string>
-    <string name="main_toolbar_title">Strings</string>
+    <string name="main_toolbar_title">Inicio</string>
+    <string name="settings_toolbar_title">Config.</string>
     <string name="app_name">StringsCreator</string>
 </resources>

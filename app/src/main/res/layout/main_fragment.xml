@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/coordinator">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        android:id="@+id/appbar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            app:title="@string/main_toolbar_title"
+            app:menu="@menu/menu"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+            android:id="@+id/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:overScrollMode="always">
+
+        <ListView
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:divider="@null"
+            android:layout_margin="1dp"
+            android:padding="8dp"
+            android:choiceMode="none"
+            android:layout_weight="1"
+            android:id="@+id/listStrings"
+            android:dividerHeight="0dp">
+
+        </ListView>
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
