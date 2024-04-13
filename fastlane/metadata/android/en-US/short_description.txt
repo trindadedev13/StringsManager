@@ -1,1 +1,1 @@
-The Strings-Creator is android application for help developers to create string quickly 
+Create strings quickly. 
