@@ -57,6 +57,7 @@
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:singleLine="true"
+                        android:id="@+id/resourcesTag"
                          android:text="@string/settings_resources_tag_description" />
 
                 </LinearLayout>
