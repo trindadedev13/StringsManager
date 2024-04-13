@@ -1,0 +1,6 @@
+- Material 3 Design
+- English and Portuguese initial languages
+- First Version
+- Save Strings in File
+- Save data in app
+- Load data in app
