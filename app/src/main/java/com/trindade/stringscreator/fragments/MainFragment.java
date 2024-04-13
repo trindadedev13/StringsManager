@@ -1,28 +1,29 @@
 package com.trindade.stringscreator.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.android.material.transition.MaterialFade;
 import com.google.android.material.transition.MaterialSharedAxis;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.trindade.stringscreator.StringsCreatorApp;
 import com.trindade.stringscreator.R;
+import com.trindade.stringscreator.StringsCreatorAppLog;
 import com.trindade.stringscreator.adapters.StringsAdapter;
 import com.trindade.stringscreator.classes.copyToClipboard;
 import com.trindade.stringscreator.databinding.ActivityMainBinding;
@@ -31,9 +32,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainFragment extends Fragment {
-    
+
     MainFragmentBinding binding;
-    ActivityMainBinding bindMain;
     boolean ADD_RES;
     HashMap<String, Object> map = new HashMap<>();
     int p = 0;
@@ -42,20 +42,27 @@ public class MainFragment extends Fragment {
     private static final int CREATE_FILE = 1;
     ArrayList<HashMap<String, Object>> listmap = new ArrayList<>();
     SharedPreferences sp;
-    Context ctx;
-    
+    Context ctx, context;
+    StringsCreatorAppLog logger = new StringsCreatorAppLog();
+
     @Override
-    public void onCreate(Bundle bund){
+    public void onCreate(Bundle bund) {
         super.onCreate(bund);
         setEnterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, true));
         setExitTransition(new MaterialSharedAxis(MaterialSharedAxis.X, false));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = MainFragmentBinding.inflate(inflater);
-        bindMain = ActivityMainBinding.inflate(getLayoutInflater());
         ctx = getActivity();
+        try{
+            sp = context.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
+        } catch(Exception e){
+            
+        }
+        
 
         initializeViews();
         clicks();
@@ -69,37 +76,38 @@ public class MainFragment extends Fragment {
             sp.edit().putString("JSON", "[]").apply();
             sp.edit().putBoolean("ADD_RES", true).apply();
         } else {
-            getData();
+            getData(binding.listStrings);
         }
     }
 
     private void clicks() {
-        bindMain.fab.setOnClickListener(
+        binding.fab.setOnClickListener(
                 v -> {
-                    MaterialAlertDialogBuilder dialog =
-                            new MaterialAlertDialogBuilder(getActivity());
-                    View alertD = getLayoutInflater().inflate(R.layout.edittext, null);
-                    dialog.setView(alertD);
+                    if (binding.listStrings != null) {
+                        MaterialAlertDialogBuilder dialog =
+                                new MaterialAlertDialogBuilder(getActivity());
+                        View alertD = getLayoutInflater().inflate(R.layout.edittext, null);
+                        dialog.setView(alertD);
 
-                    final TextInputEditText stringName = alertD.findViewById(R.id.stringName);
-                    final TextInputEditText stringValue = alertD.findViewById(R.id.stringValue);
-                    final TextInputLayout til1 = alertD.findViewById(R.id.til1);
-                    final TextInputLayout til2 = alertD.findViewById(R.id.til2);
-                    stringName.setFocusableInTouchMode(true);
-                    stringValue.setFocusableInTouchMode(true);
-                    til1.setBoxCornerRadii((float) 12, (float) 12, (float) 12, (float) 12);
-                    til2.setBoxCornerRadii((float) 12, (float) 12, (float) 12, (float) 12);
-                    dialog.setTitle(getResources().getString(R.string.main_fab_text));
-                    dialog.setPositiveButton(
-                            getResources().getString(R.string.create),
-                            (d, w) -> {
-                                newString(
-                                        stringName.getText().toString(),
-                                        stringValue.getText().toString());
-                            });
-                    dialog.setNegativeButton(
-                            getResources().getString(R.string.cancel), (d, w) -> {});
-                    dialog.show();
+                        final TextInputEditText stringName = alertD.findViewById(R.id.stringName);
+                        final TextInputEditText stringValue = alertD.findViewById(R.id.stringValue);
+
+                        stringName.setFocusableInTouchMode(true);
+                        stringValue.setFocusableInTouchMode(true);
+
+                        dialog.setTitle(getResources().getString(R.string.main_fab_text));
+                        dialog.setPositiveButton(
+                                getResources().getString(R.string.create),
+                                (d, w) -> {
+                                    newString(
+                                            stringName.getText().toString(),
+                                            stringValue.getText().toString());
+                                });
+                        dialog.setNegativeButton(getResources().getString(R.string.cancel), null);
+                        dialog.show();
+                    } else {
+                        logger.add("null list");
+                    }
                 });
 
         binding.toolbar.setOnMenuItemClickListener(
@@ -119,20 +127,6 @@ public class MainFragment extends Fragment {
 
     private void updateList() {
         StringsCreatorApp.updateListView(getActivity(), listmap, binding.listStrings);
-    }
-
-    private void putData() {
-        sp.edit().putString("JSON", new Gson().toJson(listmap)).apply();
-    }
-
-    private void getData() {
-        ADD_RES = sp.getBoolean("ADD_RES", false);
-        listmap =
-                new Gson()
-                        .fromJson(
-                                sp.getString("JSON", ""),
-                                new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
-        updateList();
     }
 
     private void newString(String name, String value) {
@@ -192,5 +186,35 @@ public class MainFragment extends Fragment {
         dialog.setNegativeButton(getResources().getString(R.string.cancel), (d, w) -> {});
 
         dialog.show();
+    }
+
+    private void newString(String name, String value, ListView listV) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("val", "<string name=\"" + name + "\">" + value + "</string>");
+        map.put("name", name);
+        map.put("value", value);
+        listmap.add(map);
+        updateList(listV);
+        putData();
+    }
+
+    private void updateList(ListView ctc) {
+        StringsCreatorApp.updateListView(context, listmap, binding.listStrings);
+        Log.d("Utils", "Lista atualizada com sucesso.");
+    }
+
+    private void putData() {
+        sp.edit().putString("JSON", new Gson().toJson(listmap)).apply();
+        Log.d("Utils", "Dados salvos com sucesso.");
+    }
+
+    private void getData(ListView listV) {
+        boolean ADD_RES = sp.getBoolean("ADD_RES", false);
+        listmap =
+                new Gson()
+                        .fromJson(
+                                sp.getString("JSON", ""),
+                                new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
+        updateList(binding.listStrings);
     }
 }

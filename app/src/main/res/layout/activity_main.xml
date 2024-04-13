@@ -15,16 +15,6 @@
 
     </FrameLayout>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-         android:layout_height="wrap_content"
-         android:layout_width="wrap_content"
-         app:icon="@drawable/ic_add"
-         android:layout_margin="16dp"
-         android:id="@+id/fab"
-        android:translationY="-40dp"
-         android:layout_gravity="bottom|end"
-         android:text="@string/main_fab_text" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
          android:layout_height="wrap_content"
          android:layout_width="match_parent"
