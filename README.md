@@ -26,3 +26,10 @@
 <p><b>Strings-Creator</b> is a application for android, to facilitate your life to Create Xml Strings</p>
 <p>You only need to type Name and Value of string and Done!</p>
 your xml strings file is ready!
+
+
+# Contributors:
+
+<a href="https://github.com/aquilesTrindade/StringsCreator/graphs/contributors">
+  <img alt="contributors graph" src="https://contrib.rocks/image?repo=aquilesTrindade/StringsCreator" />
+</a>
