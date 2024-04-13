@@ -1,7 +1,7 @@
 # Strings-Creator 
 <div align="center"> 
     <p>Quick, Easy and practical! </p>
-    ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+    <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white">
         <a href="LICENSE">
         <img src="https://img.shields.io/github/license/aquilestrindade/stringscreator.svg?color=FFFFFF&style=for-the-badge&logo=gitbook&logoColor=ebebf0&labelColor=23232F" alt="License">
     </a>
