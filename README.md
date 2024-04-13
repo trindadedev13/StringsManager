@@ -2,13 +2,13 @@
 <div align="center"> 
     <p>Quick, Easy and practical! </p>
         <a href="LICENSE">
-        <img src="https://img.shields.io/github/license/aquilestrindade/stringscreator.svg?color=CFBDFF&style=for-the-badge&logo=gitbook&logoColor=ebebf0&labelColor=23232F" alt="License">
+        <img src="https://img.shields.io/github/license/aquilestrindade/stringscreator.svg?color=FFFFFF&style=for-the-badge&logo=gitbook&logoColor=ebebf0&labelColor=23232F" alt="License">
     </a>
     <a href="https://github.com/aquilesTrindade/StringsCreator/releases">
-        <img src="https://img.shields.io/github/v/release/aquilesTrindade/StringsCreator?color=cfbdff&style=for-the-badge&logo=pkgsrc&logoColor=ebebf0&labelColor=23232F" alt="GitHub release">
+        <img src="https://img.shields.io/github/v/release/aquilesTrindade/StringsCreator?color=FFFFFF&style=for-the-badge&logo=pkgsrc&logoColor=ebebf0&labelColor=23232F" alt="GitHub release">
     </a>
         <a href="https://github.com/aquilesTrindade/StringsCreator/releases">
-        <img src="https://img.shields.io/github/downloads/aquilesTrindade/StringsCreator/total.svg?color=cfbdff&style=for-the-badge&labelColor=23232F" alt="Download Counts">
+        <img src="https://img.shields.io/github/downloads/aquilesTrindade/StringsCreator/total.svg?color=FFFFFF&style=for-the-badge&labelColor=23232F" alt="Download Counts">
 </div>
 
 # What's is Strings-Creator? 
