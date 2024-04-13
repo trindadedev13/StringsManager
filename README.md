@@ -12,6 +12,7 @@
                 <a href="https://github.com/aquilesTrindade/StringsCreator/stargazers">
         <img src="https://img.shields.io/github/stars/aquilesTrindade/StringsCreator.svg?color=FFFFFF&style=for-the-badge&logo=apachespark&logoColor=ebebf0&labelColor=23232F" alt="Stars Count">
     </a>
+    <img alt="GitHubLastCommit" src="https://img.shields.io/github/last-commit/aquilesTrindade/StringsCreator?color=FFFFFF&style=for-the-badge&logo=github&logoColor=ebebf0&labelColor=23232F">
 </div>
 
 # What's is Strings-Creator? 
