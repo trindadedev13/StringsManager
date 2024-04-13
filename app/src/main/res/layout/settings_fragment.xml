@@ -38,8 +38,8 @@
             <com.google.android.material.card.MaterialCardView
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 app:rippleColor="#000000"
                  android:layout_marginBottom="5dp"
+                 app:rippleColor="#000000"
                  android:backgroundTint="@android:color/transparent"
                  app:cardCornerRadius="15dp">
 
@@ -71,14 +71,15 @@
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
                  app:rippleColor="#000000"
-                 android:layout_marginTop="5dp"
                  android:backgroundTint="@android:color/transparent"
+                 android:layout_marginTop="5dp"
                  app:cardCornerRadius="15dp"
-                 android:id="@+id/github_contributors">
+                 android:id="@+id/github_issues">
 
                 <LinearLayout
                      android:layout_height="wrap_content"
                      android:layout_width="match_parent"
+                     android:gravity="center_vertical"
                      android:padding="8dp"
                      android:orientation="horizontal">
 
@@ -91,8 +92,9 @@
                          android:layout_height="wrap_content"
                          android:layout_width="wrap_content"
                          android:textSize="16sp"
+                         android:layout_marginLeft="5dp"
                          android:textStyle="bold"
-                         android:text="@string/github_contributors" />
+                         android:text="@string/github_issues" />
 
                 </LinearLayout>
 

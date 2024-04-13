@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +52,9 @@ public class SettingsFragment extends Fragment {
                     sp.edit().putBoolean("ADD_RES", isChecked).apply();
                 });
 
-        binding.githubContributors.setOnClickListener(
+        binding.githubIssues.setOnClickListener(
                 v -> {
-                    Intent in = new Intent(getActivity(), GitHubContributorsActivity.class);
-                    startActivity(in);
+                    openURL(getActivity(), "https://github.com/aquilesTrindade/StringsCreator/issues");
                 });
 
         return binding.getRoot();
@@ -62,5 +62,15 @@ public class SettingsFragment extends Fragment {
 
     private void getData() {
         binding.resourcesTag.setChecked(sp.getBoolean("ADD_RES", false));
+    }
+
+    public static void openURL(Context ctx, String url) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            ctx.startActivity(intent);
+        } catch (Exception e) {
+        }
     }
 }

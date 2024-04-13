@@ -1,0 +1,20 @@
+<resources>
+<!-- All colors by Aquiles Trindade -->
+   <!-- Light Colors -->
+  <color name="seed">#FFFFFF</color>
+  
+  	<color name="color_primary">#000000</color>
+  	<color name="color_on_primary">#FFFFFF</color>
+	<color name="color_primary_dark">#000000</color>
+	<color name="color_accent">#000000</color>
+	<color name="color_control_highlight">#000000</color>
+	<color name="color_control_normal">#000000</color>
+	<color name="fab_background_tint">#000000</color>
+	<color name="fab_icon_tint">#FFFFFF</color>
+	<color name="color_surface">#FFFBFE</color>
+	<color name="color_background">#FFFBFE</color>
+	<color name="color_on_background">#1C1B1F</color>
+	<color name="color_container">#E0E0E0</color>
+	<color name="color_green">#4CAF50</color>
+	<color name="color_error">#B3261E</color>
+</resources>
