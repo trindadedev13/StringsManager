@@ -15,8 +15,8 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.transition.MaterialSharedAxis;
 
 import com.trindade.stringscreator.R;
+import com.trindade.stringscreator.activities.api.github.GitHubContributorsActivity;
 import com.trindade.stringscreator.classes.GlobalConfig;
-import com.trindade.stringscreator.classes.api.github.GitHubContributorsActivity;
 import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
 
 public class SettingsFragment extends Fragment {

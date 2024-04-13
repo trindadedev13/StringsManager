@@ -21,6 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.trindade.stringscreator.activities.DebugActivity"/>
-        <activity android:name="com.trindade.stringscreator.classes.api.github.GitHubContributorsActivity"/>
+        <activity android:name="com.trindade.stringscreator.activities.api.github.GitHubContributorsActivity"/>
     </application>
 </manifest>
