@@ -27,6 +27,9 @@
 <p>You only need to type Name and Value of string and Done!</p>
 your xml strings file is ready!
 
+# Download 
+[<img src="https://s1.ax1x.com/2023/01/12/pSu1a36.png" alt="Get it on GitHub" height="80">](https://github.com/aquilesTrindade/StringsCreator/releases)
+
 
 # Contributors:
 
