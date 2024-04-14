@@ -33,10 +33,6 @@ public class StringsCreatorApp extends Application {
     public static void updateListView(Context ctx, ArrayList<HashMap<String, Object>> listmap, ListView listStrings) {
         listStrings.setAdapter(new StringsAdapter(ctx, listmap, listStrings));
         ((BaseAdapter) listStrings.getAdapter()).notifyDataSetChanged();
-        listStrings.setLayoutParams(
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        listmap.size() * 100));
         if (sFragmentManager != null) {
             sFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, new MainFragment())
