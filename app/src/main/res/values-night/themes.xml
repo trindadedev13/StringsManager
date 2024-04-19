@@ -1,7 +1,7 @@
 <resources>
   <!-- All Styles By Aquiles Trindade -->
   
-    <style name="AppTheme" parent="Theme.Material3.Dark">
+    <style name="AppTheme" parent="Theme.Material3.DynamicColors.Dark">
    
     <!-- Phone Bars -->
         <item name="android:navigationBarColor">@android:color/transparent</item>
