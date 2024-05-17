@@ -3,7 +3,7 @@ name: StringsCreator - R
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   build:

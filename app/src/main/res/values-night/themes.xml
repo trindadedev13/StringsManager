@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.Material3.DynamicColors.Dark">
    
     <!-- Phone Bars -->
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor" >@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:statusBarColor" >?android:attr/colorBackground</item>
         <item name="android:windowLightStatusBar">false</item>
         
    <!-- ActionBar -->     
@@ -19,7 +19,7 @@
     </style>
     <!--- BottomSheet Theme -->
 <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:navigationBarColor">?android:attr/colorBackground</item>
     
      <!--- CardView Style -->
 </style>

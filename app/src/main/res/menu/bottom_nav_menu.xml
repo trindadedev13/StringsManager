@@ -6,6 +6,6 @@
         android:title="@string/main_toolbar_title" />
     <item
         android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/ic_settings_anim"
         android:title="@string/settings_toolbar_title" />
 </menu>
