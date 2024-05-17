@@ -29,17 +29,12 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle bund) {
         super.onCreate(bund);
-        setEnterTransition(
-                new MaterialSharedAxis(
-                        GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
-        setExitTransition(
-                new MaterialSharedAxis(
-                        GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
+        setEnterTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
+        setExitTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = SettingsFragmentBinding.inflate(inflater, container, false);
         ctx = requireContext();
         if (ctx != null) {
@@ -47,16 +42,19 @@ public class SettingsFragment extends Fragment {
             getData();
         }
 
-        binding.resourcesTag.setOnCheckedChangeListener(
-                (compoundButton, isChecked) -> {
-                    sp.edit().putBoolean("ADD_RES", isChecked).apply();
-                });
+        binding.resourcesTag.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+           sp.edit().putBoolean("ADD_RES", isChecked).apply();
+        });
 
-        binding.githubIssues.setOnClickListener(
-                v -> {
-                    openURL(getActivity(), "https://github.com/aquilesTrindade/StringsCreator/issues");
-                });
-
+        binding.githubIssues.setOnClickListener(v -> {
+           openURL(getActivity(), "https://github.com/aquilesTrindade/StringsCreator/issues");
+        });
+        
+        binding.githubContributors.setOnClickListener(v -> {
+           Intent in = new Intent(ctx, GitHubContributorsActivity.class);
+           startActivity(in);
+        }
+        
         return binding.getRoot();
     }
 

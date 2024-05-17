@@ -55,12 +55,8 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle bund) {
         super.onCreate(bund);
-        setEnterTransition(
-                new MaterialSharedAxis(
-                        GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
-        setExitTransition(
-                new MaterialSharedAxis(
-                        GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
+        setEnterTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisEnter, GlobalConfig.SharedAxisEnterBoolean));
+        setExitTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
     }
 
     @Override
@@ -69,8 +65,7 @@ public class MainFragment extends Fragment {
         if (rC == 1 && rsC == Activity.RESULT_OK) {
             if (dt != null) {
                 Uri uri = dt.getData();
-                try (OutputStream outputStream =
-                        getActivity().getContentResolver().openOutputStream(uri)) {
+                try (OutputStream outputStream = getActivity().getContentResolver().openOutputStream(uri)) {
                     outputStream.write(generateCodeFull().getBytes());
                     outputStream.close();
                 } catch (IOException e) {
@@ -81,11 +76,10 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = MainFragmentBinding.inflate(inflater);
         ctx = getActivity();
-        // Verifica se o contexto é nulo antes de usá-lo
+        
         if (ctx != null) {
             sp = ctx.getSharedPreferences("prefs", Activity.MODE_PRIVATE);
         }
@@ -110,8 +104,7 @@ public class MainFragment extends Fragment {
 
     private void clicks() {
 
-        binding.toolbar.setOnMenuItemClickListener(
-                item -> {
+        binding.toolbar.setOnMenuItemClickListener(item -> {
                     if (item.getItemId() == R.id.view_code) {
                         dialogCode();
                     } else if (item.getItemId() == R.id.save_to_file) {
@@ -239,12 +232,7 @@ public class MainFragment extends Fragment {
     private void getData(ListView listV) {
         if (ctx != null) {
             boolean ADD_RES = sp.getBoolean("ADD_RES", false);
-            listmap =
-                    new Gson()
-                            .fromJson(
-                                    sp.getString("JSON", ""),
-                                    new TypeToken<
-                                            ArrayList<HashMap<String, Object>>>() {}.getType());
+            listmap = new Gson().fromJson(sp.getString("JSON", ""), new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType()); 
             updateList(binding.listStrings);
         }
     }
