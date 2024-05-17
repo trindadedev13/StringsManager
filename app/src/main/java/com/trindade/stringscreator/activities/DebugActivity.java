@@ -5,11 +5,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
 import com.trindade.stringscreator.StringsCreatorAppLog;
+import com.trindade.stringscreator.utils.ThemedActivity;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.io.InputStream;
 
-public class DebugActivity extends Activity {
+public class DebugActivity extends ThemedActivity {
     
     StringsCreatorAppLog logger = new StringsCreatorAppLog();
     

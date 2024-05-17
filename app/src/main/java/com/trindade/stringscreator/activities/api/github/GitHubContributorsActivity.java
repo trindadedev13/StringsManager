@@ -13,6 +13,7 @@ import com.trindade.stringscreator.classes.api.github.GitHubService;
 import com.trindade.stringscreator.classes.api.github.User;
 import com.trindade.stringscreator.databinding.GithubOntributorsBinding;
 import com.trindade.stringscreator.databinding.GithubOntributorsBinding;
+import com.trindade.stringscreator.utils.ThemedActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class GitHubContributorsActivity extends AppCompatActivity {
+public class GitHubContributorsActivity extends ThemedActivity {
 
     private static final String BASE_URL = "https://api.github.com/";
     private final StringsCreatorAppLog appLogger = new StringsCreatorAppLog();

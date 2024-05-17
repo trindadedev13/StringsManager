@@ -10,9 +10,9 @@ android {
     
     defaultConfig {
         applicationId = "com.trindade.stringscreator"
-        minSdk = 26
+        minSdk = 25
         targetSdk = 34
-        versionCode = 2
+        versionCode = 1
         versionName = "@string/app_versionName"
         
         vectorDrawables { 
@@ -21,8 +21,8 @@ android {
     }
     
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildTypes {
@@ -34,7 +34,7 @@ android {
 
     buildFeatures {
         viewBinding = true
-        
+        buildConfig = true
     }
     
 }

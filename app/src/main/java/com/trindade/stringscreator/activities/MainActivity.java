@@ -23,9 +23,11 @@ import com.trindade.stringscreator.fragments.MainFragment;
 import com.trindade.stringscreator.fragments.SettingsFragment;
 import com.trindade.stringscreator.R;
 import com.trindade.stringscreator.databinding.ActivityMainBinding;
+import com.trindade.stringscreator.utils.ThemedActivity;
+
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ThemedActivity {
 
     ActivityMainBinding binding;
     SharedPreferences sp;
@@ -34,18 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                            == PackageManager.PERMISSION_DENIED
-                    || ContextCompat.checkSelfPermission(
-                                    this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                            == PackageManager.PERMISSION_DENIED) {
-                ActivityCompat.requestPermissions(
-                        this,
-                        new String[] {
-                            Manifest.permission.READ_EXTERNAL_STORAGE,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE
-                        },
-                        1000);
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 1000);
             } else {
                 init();
             }
@@ -55,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     
-    void init(){
+    public void init(){
         sp = getSharedPreferences("prefs", Activity.MODE_PRIVATE);
                 binding = ActivityMainBinding.inflate(getLayoutInflater());
                 setContentView(binding.getRoot());
