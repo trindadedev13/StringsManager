@@ -53,7 +53,7 @@ public class SettingsFragment extends Fragment {
         binding.githubContributors.setOnClickListener(v -> {
            Intent in = new Intent(ctx, GitHubContributorsActivity.class);
            startActivity(in);
-        }
+        });
         
         return binding.getRoot();
     }
