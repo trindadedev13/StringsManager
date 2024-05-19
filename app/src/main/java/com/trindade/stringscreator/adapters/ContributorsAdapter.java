@@ -70,7 +70,6 @@ public class ContributorsAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (convertView == null) {
             try {
-
                 convertView = mInflater.inflate(R.layout.content_contributor, parent, false);
                 viewHolder = new ViewHolder();
                 viewHolder.login = convertView.findViewById(R.id.login);

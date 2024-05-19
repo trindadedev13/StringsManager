@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.trindade.stringscreator.StringsCreatorAppLog;
 import com.trindade.stringscreator.utils.ThemedActivity;
+import com.trindade.stringscreator.classes.copyToClipboard;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.io.InputStream;
@@ -59,11 +60,12 @@ public class DebugActivity extends ThemedActivity {
         MaterialAlertDialogBuilder bld = new MaterialAlertDialogBuilder(this);
         bld.setTitle("An error occured");
         bld.setMessage(madeErrMsg);
-        bld.setNeutralButton(
-                "End Application",
-                (d, w) -> {
-                    finish();
-                });
+        bld.setPositiveButton("Copy", (d, w) -> {
+             copy(this, madeErrMsg);
+        });
+        bld.setNeutralButton("End Application", (d, w) -> {
+             finish();
+        });
         bld.show();
     }
 }
