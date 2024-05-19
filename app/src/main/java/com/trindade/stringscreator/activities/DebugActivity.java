@@ -61,7 +61,7 @@ public class DebugActivity extends ThemedActivity {
         bld.setTitle("An error occured");
         bld.setMessage(madeErrMsg);
         bld.setPositiveButton("Copy", (d, w) -> {
-             copy(this, madeErrMsg);
+             copyToClipboard.copy(this, madeErrMsg);
         });
         bld.setNeutralButton("End Application", (d, w) -> {
              finish();
