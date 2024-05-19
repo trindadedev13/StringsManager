@@ -10,7 +10,7 @@ android {
     
     defaultConfig {
         applicationId = "com.trindade.stringscreator"
-        minSdk = 25
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "@string/app_versionName"
