@@ -20,6 +20,10 @@ import com.trindade.stringscreator.activities.api.github.GitHubContributorsActiv
 import com.trindade.stringscreator.classes.GlobalConfig;
 import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
 
+import com.trindade.filepicker.model.DialogConfigs;
+import com.trindade.filepicker.model.DialogProperties;
+import com.trindade.filepicker.view.FilePickerDialog;
+
 public class SettingsFragment extends Fragment {
 
     SettingsFragmentBinding binding;
@@ -55,6 +59,10 @@ public class SettingsFragment extends Fragment {
            startActivity(in);
         });
         
+        binding.filePicker.setOnClickListener(v -> {
+           
+        });
+        
         return binding.getRoot();
     }
 
@@ -71,4 +79,20 @@ public class SettingsFragment extends Fragment {
         } catch (Exception e) {
         }
     }
+    
+    private void testFilePicker () {
+        DialogProperties properties = new DialogProperties();
+        properties.selection_mode = DialogConfigs.MULTI_MODE;
+        properties.selection_type = DialogConfigs.FILE_AND_DIR_SELECT;
+        properties.root = getFilesDir().getParentFile();
+        properties.error_dir = getExternalCacheDir();
+        properties.extensions = null;
+        FilePickerDialog dialog = new FilePickerDialog(this, properties);
+        dialog.setTitle("Select an entry to modify");
+        dialog.setDialogSelectionListener(files -> {
+            
+        });
+        dialog.show();
+    }
+    
 }
