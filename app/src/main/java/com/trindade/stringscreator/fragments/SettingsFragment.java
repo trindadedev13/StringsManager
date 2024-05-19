@@ -84,8 +84,8 @@ public class SettingsFragment extends Fragment {
         DialogProperties properties = new DialogProperties();
         properties.selection_mode = DialogConfigs.MULTI_MODE;
         properties.selection_type = DialogConfigs.FILE_AND_DIR_SELECT;
-        properties.root = "/sdcard/"
-        properties.error_dir = "/sdcard/"
+        properties.root = "/sdcard/";
+        properties.error_dir = "/sdcard/";
         properties.extensions = null;
         FilePickerDialog dialog = new FilePickerDialog(ctx, properties);
         dialog.setTitle("Select an entry to modify");
