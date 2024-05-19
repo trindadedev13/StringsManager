@@ -19,10 +19,16 @@ import com.trindade.stringscreator.R;
 import com.trindade.stringscreator.activities.api.github.GitHubContributorsActivity;
 import com.trindade.stringscreator.classes.GlobalConfig;
 import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
+import com.trindade.stringscreator.classes.FileUtil;
 
 import com.trindade.filepicker.model.DialogConfigs;
 import com.trindade.filepicker.model.DialogProperties;
 import com.trindade.filepicker.view.FilePickerDialog;
+
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
 
 public class SettingsFragment extends Fragment {
 
@@ -84,8 +90,8 @@ public class SettingsFragment extends Fragment {
         DialogProperties properties = new DialogProperties();
         properties.selection_mode = DialogConfigs.MULTI_MODE;
         properties.selection_type = DialogConfigs.FILE_AND_DIR_SELECT;
-        properties.root = "/sdcard/";
-        properties.error_dir = "/sdcard/";
+        properties.root = new java.io.File(FileUtil.getExternalStorageDir());
+        properties.error_dir = new java.io.File(FileUtil.getExternalStorageDir());
         properties.extensions = null;
         FilePickerDialog dialog = new FilePickerDialog(ctx, properties);
         dialog.setTitle("Select an entry to modify");
