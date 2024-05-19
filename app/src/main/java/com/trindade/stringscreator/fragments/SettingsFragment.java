@@ -66,7 +66,7 @@ public class SettingsFragment extends Fragment {
         });
         
         binding.filePicker.setOnClickListener(v -> {
-           
+           testFilePicker();
         });
         
         return binding.getRoot();
