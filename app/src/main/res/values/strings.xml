@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Strings Manager</string>
-    <string name="app_versionName">1.0</string>
     <string name="main_toolbar_title">Home</string>
     <string name="settings_toolbar_title">Settings</string>
     <string name="string_name">   String name</string>

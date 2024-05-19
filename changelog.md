@@ -1,8 +1,8 @@
-# Changelog 1.1
+# Changelog 1.0
 <p>Features</p>
-<h2 1.1 2024/04/13</h2>
+<h2 1.0 2024/05/19</h2>
 <ul>
-<li>Storage permissions fixed</li>
-<li>Contributors in App removed (This feature only arrived in the source code, so you probably don't know it) </li>
-<li>Added button to Issues</li>
+<li>Create, Edit & Delete strings</li>
+<li>See, copy and save strings</li>
+<li>Material 3</li>
 </ul>-

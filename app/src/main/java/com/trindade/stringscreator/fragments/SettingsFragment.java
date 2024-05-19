@@ -65,6 +65,7 @@ public class SettingsFragment extends Fragment {
            startActivity(in);
         });
         
+        binding.filePicker.setVisibility(View.GONE);
         binding.filePicker.setOnClickListener(v -> {
            testFilePicker();
         });
