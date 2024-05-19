@@ -11,8 +11,7 @@ import com.trindade.stringscreator.adapters.ContributorsAdapter;
 import com.trindade.stringscreator.classes.api.github.Contributor;
 import com.trindade.stringscreator.classes.api.github.GitHubService;
 import com.trindade.stringscreator.classes.api.github.User;
-import com.trindade.stringscreator.databinding.GithubOntributorsBinding;
-import com.trindade.stringscreator.databinding.GithubOntributorsBinding;
+import com.trindade.stringscreator.databinding.GithubContributorsBinding;
 import com.trindade.stringscreator.utils.ThemedActivity;
 
 import java.util.ArrayList;
@@ -29,14 +28,14 @@ public class GitHubContributorsActivity extends ThemedActivity {
 
     private static final String BASE_URL = "https://api.github.com/";
     private final StringsCreatorAppLog appLogger = new StringsCreatorAppLog();
-    private GithubOntributorsBinding binding;
+    private GithubContributorsBinding binding;
     private ArrayList<HashMap<String, Object>> contributorsList = new ArrayList<>();
     private GitHubService service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = GithubOntributorsBinding.inflate(getLayoutInflater());
+        binding = GithubContributorsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Retrofit retrofit = new Retrofit.Builder()
