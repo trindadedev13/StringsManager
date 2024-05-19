@@ -31,6 +31,8 @@ public class DebugActivity extends ThemedActivity {
         "Invalid toNumber block operation\n",
         "Invalid intent operation"
     };
+    
+    String saco = "saco";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +59,12 @@ public class DebugActivity extends ThemedActivity {
             }
         }
         logger.add(madeErrMsg);
+        saco = madeErrMsg;
         MaterialAlertDialogBuilder bld = new MaterialAlertDialogBuilder(this);
         bld.setTitle("An error occured");
         bld.setMessage(madeErrMsg);
         bld.setPositiveButton("Copy", (d, w) -> {
-             copyToClipboard.copy(this, madeErrMsg);
+             copyToClipboard.copy(this, saco);
         });
         bld.setNeutralButton("End Application", (d, w) -> {
              finish();
