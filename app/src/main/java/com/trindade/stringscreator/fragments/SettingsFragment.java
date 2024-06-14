@@ -21,10 +21,6 @@ import com.trindade.stringscreator.classes.GlobalConfig;
 import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
 import com.trindade.stringscreator.classes.FileUtil;
 
-import com.trindade.filepicker.model.DialogConfigs;
-import com.trindade.filepicker.model.DialogProperties;
-import com.trindade.filepicker.view.FilePickerDialog;
-
 import java.io.*;
 import java.text.*;
 import java.util.*;
