@@ -3,9 +3,9 @@
     <style name="AppTheme" parent="Theme.Material3.DynamicColors.Dark">
         
     <!-- Phone Bars -->
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor" >@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@android:attr/colorBackground</item>
+        <item name="android:statusBarColor" >@android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar">falde</item>
         
     <!-- ActionBar -->     
         <item name="windowNoTitle">true</item>
