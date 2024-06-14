@@ -5,7 +5,7 @@
     <!-- Phone Bars -->
         <item name="android:navigationBarColor">@android:attr/colorBackground</item>
         <item name="android:statusBarColor" >@android:attr/colorBackground</item>
-        <item name="android:windowLightStatusBar">falde</item>
+        <item name="android:windowLightStatusBar">false</item>
         
     <!-- ActionBar -->     
         <item name="windowNoTitle">true</item>
