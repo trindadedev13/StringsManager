@@ -1,5 +1,4 @@
 <resources>
-  <!-- All Styles By Aquiles Trindade -->
   
     <style name="AppTheme" parent="Theme.Material3.DynamicColors.Light">
         
@@ -8,26 +7,26 @@
         <item name="android:statusBarColor" >@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
         
-   <!-- ActionBar -->     
+    <!-- ActionBar -->     
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         
-   <!-- Others -->
+    <!-- Others -->
         <item name="android:fontFamily">@font/app_font</item>
         <item name="android:windowActivityTransitions">true</item>
         
     </style>
-    <!--- BottomSheet Theme -->
-<style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-    <item name="android:navigationBarColor">@android:color/transparent</item>
     
-     <!--- CardView Style -->
-</style>
+    <!--- BottomSheet Theme -->
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+    
+    <!--- CardView Style -->
     <style name="Gam.Card" parent="Widget.Material3.CardView.Filled">
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:layout_marginTop">10dp</item>
-  <!--<item name="app:cardBackgroundColor">@android:color/system_neutral2_50</item> -->
     </style>
     
     <!-- Collapsing Toolbar Large Style -->
@@ -38,4 +37,5 @@
     <style name="Gam.Button" parent="@style/Widget.Material3.Button">
         <item name="fontFamily">@font/app_font</item>
     </style>
+    
 </resources>

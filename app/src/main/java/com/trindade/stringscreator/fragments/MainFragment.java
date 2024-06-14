@@ -191,7 +191,6 @@ public class MainFragment extends Fragment {
     private void dialogCode() {
         MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(getActivity());
         dialog.setTitle(getResources().getString(R.string.view_code));
-        // dialog.setMessage(generateCodeFull());
 
         LinearLayout layout = new LinearLayout(getActivity());
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(match, wrap);
@@ -221,12 +220,12 @@ public class MainFragment extends Fragment {
 
     private void updateList(ListView ctc) {
         StringsCreatorApp.updateListView(ctx, listmap, ctc);
-        Log.d("Utils", "Lista atualizada com sucesso.");
+        Log.d("Utils", "List updated successfully.");
     }
 
     private void putData() {
         sp.edit().putString("JSON", new Gson().toJson(listmap)).apply();
-        Log.d("Utils", "Dados salvos com sucesso.");
+        Log.d("Utils", "Data saved successfully.");
     }
 
     private void getData(ListView listV) {

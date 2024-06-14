@@ -61,7 +61,7 @@
                          android:layout_width="match_parent"
                          android:singleLine="true"
                          android:id="@+id/resourcesTag"
-                         android:text="@string/settings_resources_tag_description" />
+                         android:text="@string/settings_resources_tag_message" />
 
                 </LinearLayout>
 
@@ -94,7 +94,7 @@
                          android:textSize="16sp"
                          android:layout_marginLeft="5dp"
                          android:textStyle="bold"
-                         android:text="@string/github_issues" />
+                         android:text="@string/github_issues_title" />
 
                 </LinearLayout>
 
@@ -127,45 +127,11 @@
                          android:textSize="16sp"
                          android:layout_marginLeft="5dp"
                          android:textStyle="bold"
-                         android:text="@string/github_contributors" />
+                         android:text="@string/github_contributors_title" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-            
-           <com.google.android.material.card.MaterialCardView
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:rippleColor="#000000"
-                 android:backgroundTint="@android:color/transparent"
-                 android:layout_marginTop="5dp"
-                 app:cardCornerRadius="15dp"
-                 android:id="@+id/file_picker">
-
-                <LinearLayout
-                     android:layout_height="wrap_content"
-                     android:layout_width="match_parent"
-                     android:gravity="center_vertical"
-                     android:padding="8dp"
-                     android:orientation="horizontal">
-
-                    <ImageView
-                         android:layout_height="wrap_content"
-                         android:layout_width="wrap_content"
-                         android:src="@drawable/ic_github" />
-
-                    <TextView
-                         android:layout_height="wrap_content"
-                         android:layout_width="wrap_content"
-                         android:textSize="16sp"
-                         android:layout_marginLeft="5dp"
-                         android:textStyle="bold"
-                         android:text="FilePicker" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
             
         </LinearLayout>
 

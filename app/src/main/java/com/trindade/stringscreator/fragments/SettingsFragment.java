@@ -65,11 +65,6 @@ public class SettingsFragment extends Fragment {
            startActivity(in);
         });
         
-        binding.filePicker.setVisibility(View.GONE);
-        binding.filePicker.setOnClickListener(v -> {
-           testFilePicker();
-        });
-        
         return binding.getRoot();
     }
 
@@ -86,20 +81,4 @@ public class SettingsFragment extends Fragment {
         } catch (Exception e) {
         }
     }
-    
-    private void testFilePicker () {
-        DialogProperties properties = new DialogProperties();
-        properties.selection_mode = DialogConfigs.MULTI_MODE;
-        properties.selection_type = DialogConfigs.FILE_AND_DIR_SELECT;
-        properties.root = new java.io.File(FileUtil.getExternalStorageDir());
-        properties.error_dir = new java.io.File(FileUtil.getExternalStorageDir());
-        properties.extensions = null;
-        FilePickerDialog dialog = new FilePickerDialog(ctx, properties);
-        dialog.setTitle("Select an entry to modify");
-        dialog.setDialogSelectionListener(files -> {
-            
-        });
-        dialog.show();
-    }
-    
 }
