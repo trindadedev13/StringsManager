@@ -1,4 +1,0 @@
-- Storage permissions fixed
-- Design Fixed
-- Contributors in App removed (This feature only arrived in the source code, so you probably don't know it) 
-- Added button to Issues

@@ -1,8 +1,0 @@
-The Strings-Creator is android application for help developers to create string quickly 
-
-<p>Features</p>
-
-- Open source: You can see how the app works for yourself! 
-- Material Design 3: Modern and elegant design for your comfort! 
-- Navigation: Simple and intuitive navigation 
-- Support: Support for Landscape and Portrait! 
