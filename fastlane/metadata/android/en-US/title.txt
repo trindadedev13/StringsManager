@@ -1,1 +1,1 @@
-StringsCreator
+Strings Manager
