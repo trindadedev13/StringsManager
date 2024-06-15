@@ -1,4 +1,4 @@
-name: StringsCreator - R
+name: StringsCreator - Release
 
 on:
   push:
@@ -30,8 +30,41 @@ jobs:
         with:
           arguments: assembleRelease
 
-      - name: Upload release apk
-        uses: actions/upload-artifact@v3
+      - name: Sign APK
+        id: sign_apk
+        uses: r0adkll/sign-android-release@v1
         with:
-          name: StringsCreator-Release
-          path: app/build/outputs/apk/release/
+          releaseDirectory: store/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+
+      - name: Upload signed APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Strings-Manager-Debug
+          path: ${{ steps.sign_apk.outputs.signedReleaseFile }}
+
+      - name: Send APK to Trindade CI Telegram
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          document: ${{ steps.sign_apk.outputs.signedReleaseFile }}
+          disable_web_page_preview: false
+          message: |
+            *Build Success!*
+            Repository: *${{ github.repository }}*
+            Branch: *${{ github.ref_name }}*
+            ```java
+            // Alert: RELEASE VERSIONS IS UNSTABLE !!! 
+            ``` 
+            Type: release
+            Commit message: `${{ github.event.head_commit.message }}`
+            [Check the logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+                

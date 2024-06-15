@@ -1,3 +1,0 @@
-- App re-design with fragments
-- Fragments system added
-- Settings Page Added

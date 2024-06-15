@@ -1,4 +1,4 @@
-name: StringsCreator - D
+name: StringsCreator - Debug
 
 on:
   push:
@@ -34,5 +34,5 @@ jobs:
       - name: Upload debug apk
         uses: actions/upload-artifact@v3
         with:
-          name: StringsCreator-Debug
+          name: Strings-Manager-Debug
           path: app/build/outputs/apk/
