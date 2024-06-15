@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.application")
     
@@ -12,8 +11,8 @@ android {
         applicationId = "com.trindade.stringscreator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.2"
         
         vectorDrawables { 
             useSupportLibrary = true
