@@ -36,7 +36,7 @@ jobs:
           arguments: assembleDebug
 
       - name: Upload debug apk
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Strings-Manager-Debug
           path: app/build/outputs/apk/
