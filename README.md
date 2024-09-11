@@ -3,17 +3,17 @@
     <p>Quick, Easy and practical! </p>
     <img src="https://img.shields.io/badge/java-%23FFFFFF.svg?style=for-the-badge&logo=openjdk&logoColor=black">
         <a href="LICENSE">
-        <img src="https://img.shields.io/github/license/aquilestrindade/stringsmanager.svg?color=FFFFFF&style=for-the-badge&logo=gitbook&logoColor=ebebf0&labelColor=23232F" alt="License">
+        <img src="https://img.shields.io/github/license/trindadedev13/stringsmanager.svg?color=FFFFFF&style=for-the-badge&logo=gitbook&logoColor=ebebf0&labelColor=23232F" alt="License">
     </a>
-    <a href="https://github.com/aquilesTrindade/StringsManager/releases">
-        <img src="https://img.shields.io/github/v/release/aquilesTrindade/StringsManager?color=FFFFFF&style=for-the-badge&logo=pkgsrc&logoColor=ebebf0&labelColor=23232F" alt="GitHub release">
+    <a href="https://github.com/trindadedev13/StringsManager/releases">
+        <img src="https://img.shields.io/github/v/release/trindadedev13/StringsManager?color=FFFFFF&style=for-the-badge&logo=pkgsrc&logoColor=ebebf0&labelColor=23232F" alt="GitHub release">
     </a>
-        <a href="https://github.com/aquilesTrindade/StringsManager/releases">
+        <a href="https://github.com/trindadedev13/StringsManager/releases">
         <img src="https://img.shields.io/github/downloads/aquilesTrindade/StringsManager/total.svg?color=FFFFFF&style=for-the-badge&labelColor=23232F" alt="Download Counts">
-                <a href="https://github.com/aquilesTrindade/StringsManager/stargazers">
-        <img src="https://img.shields.io/github/stars/aquilesTrindade/StringsManager.svg?color=FFFFFF&style=for-the-badge&logo=apachespark&logoColor=ebebf0&labelColor=23232F" alt="Stars Count">
+                <a href="https://github.com/trindadedev13/StringsManager/stargazers">
+        <img src="https://img.shields.io/github/stars/trindadedev13/StringsManager.svg?color=FFFFFF&style=for-the-badge&logo=apachespark&logoColor=ebebf0&labelColor=23232F" alt="Stars Count">
     </a>
-    <img alt="GitHubLastCommit" src="https://img.shields.io/github/last-commit/aquilesTrindade/StringsManager?color=FFFFFF&style=for-the-badge&logo=github&logoColor=ebebf0&labelColor=23232F">
+    <img alt="GitHubLastCommit" src="https://img.shields.io/github/last-commit/trindadedev13/StringsManager?color=FFFFFF&style=for-the-badge&logo=github&logoColor=ebebf0&labelColor=23232F">
 </div>
 
 # What's is Strings-Manager? 
@@ -35,6 +35,6 @@ your xml strings file is ready!
 
 # Contributors:
 
-<a href="https://github.com/aquilesTrindade/StringsManager/graphs/contributors">
-  <img alt="contributors graph" src="https://contrib.rocks/image?repo=aquilesTrindade/StringsManager" />
+<a href="https://github.com/trindadedev13/StringsManager/graphs/contributors">
+  <img alt="contributors graph" src="https://contrib.rocks/image?repo=trindadedev13/StringsManager" />
 </a>
