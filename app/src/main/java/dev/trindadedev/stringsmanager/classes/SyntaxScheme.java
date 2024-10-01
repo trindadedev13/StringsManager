@@ -1,6 +1,7 @@
-package com.trindade.stringscreator.classes;
+package dev.trindadedev.stringsmanager.classes;
 
 import android.graphics.Color;
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 

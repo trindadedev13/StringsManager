@@ -1,4 +1,4 @@
-package com.trindade.stringscreator;
+package dev.trindadedev.stringsmanager;
 
 import java.util.ArrayList;
 import java.util.List;

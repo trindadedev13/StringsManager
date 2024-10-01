@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.activities;
+package dev.trindadedev.stringsmanager.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -6,9 +6,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.trindade.stringscreator.StringsCreatorAppLog;
-import com.trindade.stringscreator.utils.ThemedActivity;
-import com.trindade.stringscreator.classes.copyToClipboard;
+import dev.trindadedev.stringsmanager.StringsCreatorAppLog;
+import dev.trindadedev.stringsmanager.utils.ThemedActivity;
+import dev.trindadedev.stringsmanager.classes.copyToClipboard;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.io.InputStream;

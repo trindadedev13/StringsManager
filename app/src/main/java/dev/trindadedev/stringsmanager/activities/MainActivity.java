@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.activities;
+package dev.trindadedev.stringsmanager.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -19,11 +19,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import com.trindade.stringscreator.fragments.MainFragment;
-import com.trindade.stringscreator.fragments.SettingsFragment;
-import com.trindade.stringscreator.R;
-import com.trindade.stringscreator.databinding.ActivityMainBinding;
-import com.trindade.stringscreator.utils.ThemedActivity;
+import dev.trindadedev.stringsmanager.R;
+import dev.trindadedev.stringsmanager.fragments.MainFragment;
+import dev.trindadedev.stringsmanager.fragments.SettingsFragment;
+import dev.trindadedev.stringsmanager.databinding.ActivityMainBinding;
+import dev.trindadedev.stringsmanager.utils.ThemedActivity;
 
 import java.io.IOException;
 

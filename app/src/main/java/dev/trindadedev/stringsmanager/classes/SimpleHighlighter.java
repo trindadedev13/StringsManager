@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.classes;
+package dev.trindadedev.stringsmanager.classes;
 
 import android.text.Editable;
 import android.text.Spannable;
@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import java.util.List;
 import java.util.regex.Matcher;
-
-
 
 public class SimpleHighlighter {
     

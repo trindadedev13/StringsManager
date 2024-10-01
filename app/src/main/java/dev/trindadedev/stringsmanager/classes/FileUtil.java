@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.classes;
+package dev.trindadedev.stringsmanager.classes;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;

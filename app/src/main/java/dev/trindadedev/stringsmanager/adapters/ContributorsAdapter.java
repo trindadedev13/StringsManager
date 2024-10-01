@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.adapters;
+package dev.trindadedev.stringsmanager.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,10 +21,12 @@ import androidx.cardview.widget.CardView;
 import com.bumptech.glide.Glide;
 
 import com.google.android.material.card.MaterialCardView;
-import com.trindade.stringscreator.R;
-import com.trindade.stringscreator.StringsCreatorApp;
-import com.trindade.stringscreator.activities.MainActivity;
-import com.trindade.stringscreator.databinding.ContentContributorBinding;
+
+import dev.trindadedev.stringsmanager.R;
+import dev.trindadedev.stringsmanager.StringsCreatorApp;
+import dev.trindadedev.stringsmanager.activities.MainActivity;
+import dev.trindadedev.stringsmanager.databinding.ContentContributorBinding;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.classes.api.github;
+package dev.trindadedev.stringsmanager.classes.api.github;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -9,7 +9,6 @@ public class Contributor {
     @SerializedName("avatar_url")
     private String avatarUrl;
 
-    // Getters
     public String getLogin() {
         return login;
     }

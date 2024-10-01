@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.classes.api.github;
+package dev.trindadedev.stringsmanager.classes.api.github;
 
 import java.util.List;
 import retrofit2.Call;

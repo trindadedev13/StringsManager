@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.trindade.stringscreator"
-    compileSdk = 34
+    namespace = "dev.trindadedev.stringsmanager"
+    compileSdk = 35
     
     defaultConfig {
-        applicationId = "com.trindade.stringscreator"
+        applicationId = "dev.trindadedev.stringsmanager"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 2
-        versionName = "1.2"
+        targetSdk = 35
+        versionCode = 1
+        versionName = "0.0.1"
         
         vectorDrawables { 
             useSupportLibrary = true
@@ -35,7 +35,6 @@ android {
         viewBinding = true
         buildConfig = true
     }
-    
 }
 
 dependencies {

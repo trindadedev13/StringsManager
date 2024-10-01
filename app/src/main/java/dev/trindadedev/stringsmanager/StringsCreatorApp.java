@@ -1,4 +1,4 @@
-package com.trindade.stringscreator;
+package dev.trindadedev.stringsmanager;
 
 import android.app.AlarmManager;
 import android.app.Application;
@@ -10,12 +10,16 @@ import android.os.Process;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
+
 import com.google.gson.Gson;
-import com.trindade.stringscreator.activities.DebugActivity;
-import com.trindade.stringscreator.adapters.StringsAdapter;
-import com.trindade.stringscreator.fragments.MainFragment;
+
+import dev.trindadedev.stringsmanager.activities.DebugActivity;
+import dev.trindadedev.stringsmanager.adapters.StringsAdapter;
+import dev.trindadedev.stringsmanager.fragments.MainFragment;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;

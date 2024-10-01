@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.fragments;
+package dev.trindadedev.stringsmanager.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,13 +24,13 @@ import com.google.android.material.transition.MaterialSharedAxis;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import com.trindade.stringscreator.StringsCreatorApp;
-import com.trindade.stringscreator.classes.GlobalConfig;
-import com.trindade.stringscreator.classes.SimpleHighlighter;
-import com.trindade.stringscreator.*;
+import dev.trindadedev.stringsmanager.StringsCreatorApp;
+import dev.trindadedev.stringsmanager.classes.GlobalConfig;
+import dev.trindadedev.stringsmanager.classes.SimpleHighlighter;
+import dev.trindadedev.stringsmanager.*;
+import dev.trindadedev.stringsmanager.classes.copyToClipboard;
+import dev.trindadedev.stringsmanager.databinding.MainFragmentBinding;
 
-import com.trindade.stringscreator.classes.copyToClipboard;
-import com.trindade.stringscreator.databinding.MainFragmentBinding;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;

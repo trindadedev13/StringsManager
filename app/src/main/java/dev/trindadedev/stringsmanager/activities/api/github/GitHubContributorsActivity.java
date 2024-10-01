@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.activities.api.github;
+package dev.trindadedev.stringsmanager.activities.api.github;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,13 +6,13 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.trindade.stringscreator.StringsCreatorAppLog;
-import com.trindade.stringscreator.adapters.ContributorsAdapter;
-import com.trindade.stringscreator.classes.api.github.Contributor;
-import com.trindade.stringscreator.classes.api.github.GitHubService;
-import com.trindade.stringscreator.classes.api.github.User;
-import com.trindade.stringscreator.databinding.GithubContributorsBinding;
-import com.trindade.stringscreator.utils.ThemedActivity;
+import dev.trindadedev.stringsmanager.StringsCreatorAppLog;
+import dev.trindadedev.stringsmanager.adapters.ContributorsAdapter;
+import dev.trindadedev.stringsmanager.classes.api.github.Contributor;
+import dev.trindadedev.stringsmanager.classes.api.github.GitHubService;
+import dev.trindadedev.stringsmanager.classes.api.github.User;
+import dev.trindadedev.stringsmanager.databinding.GithubContributorsBinding;
+import dev.trindadedev.stringsmanager.utils.ThemedActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.fragments;
+package dev.trindadedev.stringsmanager.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,11 +15,11 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.transition.MaterialSharedAxis;
 
-import com.trindade.stringscreator.R;
-import com.trindade.stringscreator.activities.api.github.GitHubContributorsActivity;
-import com.trindade.stringscreator.classes.GlobalConfig;
-import com.trindade.stringscreator.databinding.SettingsFragmentBinding;
-import com.trindade.stringscreator.classes.FileUtil;
+import dev.trindadedev.stringsmanager.R;
+import dev.trindadedev.stringsmanager.activities.api.github.GitHubContributorsActivity;
+import dev.trindadedev.stringsmanager.classes.GlobalConfig;
+import dev.trindadedev.stringsmanager.databinding.SettingsFragmentBinding;
+import dev.trindadedev.stringsmanager.classes.FileUtil;
 
 import java.io.*;
 import java.text.*;

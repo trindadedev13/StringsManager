@@ -1,4 +1,4 @@
-package com.trindade.stringscreator.classes;
+package dev.trindadedev.stringsmanager.classes;
 
 import com.google.android.material.transition.MaterialSharedAxis;
 
